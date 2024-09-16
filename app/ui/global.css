@@ -16,3 +16,33 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+body, html {
+  background:  linear-gradient(175deg, #ff7e5f 0%, #00d2ff 100%);
+  margin: 0;
+  padding: 0;
+  width: 100%; 
+   
+
+}
+
+.custom-font {
+  font-family: 'Your desired font family', sans-serif; /* Replace with your actual font */
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
