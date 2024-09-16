@@ -106,11 +106,7 @@ const { data: balanceData  } = useBalance({
   address : raffleAddress, 
 }); 
 
-const { data: contractStateData } = useSimulateContract({
-  abi: abi,
-  address: raffleAddress,
-  functionName: "getContractState",
-});
+
 
 
 const { data: entranceFeeData } = useReadContract({
