@@ -37,7 +37,7 @@ const avalanche = {
 const queryClient = new QueryClient(); 
 const inter = Inter({
    subsets: ['latin'], 
-    weights: [500, 800],
+    weight: ["500", "800"],
     display: 'swap', 
     preload: true,
 }); 
