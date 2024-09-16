@@ -8,8 +8,7 @@ import {ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { config } from '@/app/config';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Inter } from '@next/font/google';
-
+import { Inter } from 'next/font/google' ; 
 
 
 const avalanche = {
