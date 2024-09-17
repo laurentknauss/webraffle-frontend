@@ -1,6 +1,7 @@
 
 'use client'
 
+import { GoogleAnalytics } from '@next/third-parties/google'; 
 import '@/app/ui/global.css'
 import { RainbowKitProvider, Chain, darkTheme, midnightTheme } from "@rainbow-me/rainbowkit"; 
 import { WagmiProvider} from 'wagmi';
@@ -29,62 +30,72 @@ const avalanche = {
       blockCreated: 11_907_934,
     },
   },
-} as const satisfies Chain;
-
-
-
-
-const queryClient = new QueryClient(); 
-const inter = Inter({
-   subsets: ['latin'], 
-    weight: ["500", "800"],
-    display: 'swap', 
-    preload: true,
-}); 
-   export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className} flex`}>
-        <QueryClientProvider client={queryClient}> 
-         <WagmiProvider config={config}> 
-              <RainbowKitProvider 
-              modalSize="compact"
-              locale="en-US"
-              theme={midnightTheme({
-              accentColor: '#fc74a6',
-              overlayBlur: 'large',
-              accentColorForeground: 'black',
-              borderRadius: 'large',
-              fontStack: 'system' ,
-              })}
-              initialChain={11155111}>  
-
-              {/* Toast container for notifications */} 
-              <ToastContainer 
-              position="top-center"           
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={true}
-              closeOnClick
-              theme='colored'
+} as const satifies Chain; 
+      
+      
+      
+      
+      
+      const queryClient = new QueryClient(); 
+      const inter = Inter({
+         subsets: ['latin'], 
+          weight: ["500", "800"],
+          display: 'swap', 
+          preload: true,
+      }); 
+         export default function RootLayout({
+        children,
+      }: {
+        children: React.ReactNode;
+      }) {
+        return (
+          <html lang="en">
+            <body className={`${inter.className} flex`}>
+              <QueryClientProvider client={queryClient}> 
+               <WagmiProvider config={config}> 
+                    <RainbowKitProvider 
+                    modalSize="compact"
+                    locale="en-US"
+                    theme={midnightTheme({
+                    accentColor: '#fc74a6',
+                    overlayBlur: 'large',
+                    accentColorForeground: 'black',
+                    borderRadius: 'large',
+                    fontStack: 'system' ,
+                    })}
+                    initialChain={11155111}>  
+      
+                    {/* Toast container for notifications */} 
+                    <ToastContainer 
+                    position="top-center"           
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={true}
+                    closeOnClick
+                    theme='colored'                 
+      
+                    />
+                    
+                                    
               
-
-              />
+              
+              <div className="flex-grow"> {children} </div>
+              
               
 
                              
         
         
-        <div className="flex-grow"> {children} </div>
       
         </RainbowKitProvider>
          </WagmiProvider> 
         </QueryClientProvider>
-              </body>
+              
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} /> 
+                    </body>
+          
     </html>
   );
 }
+
+      

@@ -1,3 +1,6 @@
+
+
+
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -8,6 +11,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        '9/10': '90%',
+        '1/10': '10%', 
+      }, 
       gridTemplateColumns: {
         '13': 'repeat(13, minmax(0, 1fr))',
       },

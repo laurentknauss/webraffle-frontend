@@ -39,77 +39,63 @@ useEffect(() => {
   return (
 
 
-    <main className="flex min-h-screen flex-col p-6 
-    w-full">
-      {/* Flex container for images and text */} 
-      <div style={{ width: '170%', margin: '0 auto', }}
-       className='flex flex-col   md:flex-row gap-10 items-center justify-between'
-       > 
+    <main className="flex min-h-screen flex-col p-6   w-full">
+
+     {/* Flex container for text and connect button (left side*
+      <div className="flex flex-col  justify-between gap-6 md:w-1/2"> </div> */}
 
 
-      {/* Flex container for text and connect button (left side*/} 
-      <div className="flex flex-col  justify-between gap-6 md:w-1/2"> 
-        <div className="flex flex-col justify-center gap-6 rounded-lg bg-[#0a0a0a]
-              mt-10 mb-12 mr-8 ml-8 pl-4 pr-16 px-22 py-20 md:w-full md:px-24">          
+        {/*<div className="flex flex-col justify-center gap-6 rounded-lg bg-[#0a0a0a]
+              mt-10 mb-12 mr-8 ml-8 pl-4 pr-16 px-22 py-20 md:w-full md:px-24">  </div> */}
           
-          <p className="text-lg text-[#fc74a6] md:text-2xl md:leading-normal">
+
+          <div className="flex flex-col md:flex-row gap-10 items-start justify-between max-w-7xl mx-auto w-full">
+
+          {/* Left side : text content */} 
+          <div className="w-full p-16 md:w-9/10" style={{ width: '1200px' }}> 
+          <div className="rounded-lg bg-[#0a0a0a] p-12 md:p-20 w-full">
+          <p className="text-lg text-center text-[#fc74a6] md:text-2xl md:leading-normal">
           
           <span
-          role="img"
-          aria-label="flamingo"
-          style={{ fontSize: '36px', verticalAlign: 'middle' }} // Adjust size and alignment
-        >
-          🦩
+          role="img"  aria-label="flamingo"   style={{ fontSize: '36px', verticalAlign: 'middle' }} // Adjust size and alignment
+        >🦩
         </span>{' '}
 
-       <strong>Welcome to Decentralized Lottery</strong>{' '} 
-        <span
-          role="img"
-          aria-label="sparkles"
-          style={{ fontSize: '36px', verticalAlign: 'middle' }} // Adjust size and alignment
-        >✨
-        
+        <strong>Welcome to Decentralized Lottery</strong>{' '} 
+        <span  role="img" aria-label="sparkles" style={{ fontSize: '36px', verticalAlign: 'middle' }} // Adjust size and alignment
+        >✨       
         </span>
        
-       
-         
-
+               
             
             
-            
-             <br /> <br />
-            
-            Backend by <strong>Chainlink VRF & Automation</strong>{' '} <br /> 
-             Frontend by <strong>Typescript, NextjsV14 &  Rainbow SDK</strong> . <br />
-            <br/>
-            Available on Sepolia & Fuji testnets for only 0.01 eth/avax <br/> 
             <br />
-            A randomly picked winner selected every <span className='blink'><strong>10 minutes</strong></span> by 
-            tamper-proof decentralized oracles <br /> 
+            < br /> 
+            Backend by <strong>Chainlink VRF & Automation</strong>  {''} {''} <br /> 
+            Frontend by <strong>TypeScript, NextjsV14 &  Rainbow SDK</strong> 
+            <br />
+            <br/>
+            Available on Sepolia & Fuji testnets for only 0.01 eth/avax
+            <br />
+            <h1 className='text-justify text-center'>A randomly picked winner selected <br /> 
+             every <span className='blink'><strong>10 minutes</strong> </span> 
+            by tamper-proof decentralized oracles</h1> 
             <br /> 
             
             <p className="text-sm"> Crafted by {' '} 
             <a href="https://knauss.dev" className="text-[#fafafa]">
-              Laurent Knauss </a>  {' '} {''} blockchain engineer </p>           
+              Laurent Knauss </a>  {' '} {''} blockchain engineer
+               </p>           
           
           </p>
 
-          <div style={{ display:"flex",
-            padding: "12px", 
-            justifyContent:"center", 
-            
-           background: "transparent",
-           
-          
-          
-        }}>       
-
+            <div className='mt-8 flex flex-col bg-transparent items-center gap-4'> 
           <ConnectButton showBalance={false}/> 
             
 
             
             {isConnected && !isCorrectChain && ( 
-              <div>
+              <div className="text-center">
                 <p> Switch to Sepolia or Fuji to play </p>
             <button   onClick={() => switchChain({ chainId: 11155111 })}> 
               Switch to Sepolia 
@@ -128,59 +114,23 @@ useEffect(() => {
 
               
               {isConnected && (
-              <button onClick={() => disconnect()} className="flex items-center">                    
-              
-                <MdArrowForward size={20} /> 
-                Disconnect
+              <button onClick={() => disconnect()} className="flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded">                    
+             <MdArrowForward size={20} /> 
+                <span className="text-white"> Disconnect Wallet </span>
               </button>
               )} 
               </div> 
       </div>
+      </div> 
            
-        
-      
-      
-      
 
-            {/*
-          {/* Flex container for images (right side ) *
-      <div style={{ width: '100%' }}
-       className="mt-4 mb-4 pt-16 flex flex-col gap-10 
-      h-auto   items-center justify-center rounded-lg bg-black  md:h-54 md:w-1/2">
-        <img  src="/chainlink.png"         
-          width={80}
-          height={80}
-          className="rounded"
-          />
-          <img  src="/sepolia.png"         
-          width={80}
-          height={80}
-          className="rounded"
-          />
-
-<img  src="/avax.png"         
-          width={80}
-          height={80}
-          className="rounded"
-          />
-
-
-<img  src="/wagmi.png"         
-          width={80}
-          height={80}
-          className="rounded"
-          />
-
-
-
-
-
-<img  src="/rainbow.png"         
-          width={80}
-          height={80}
-          className="rounded"
-          />
-          </div> */}
+          {/* Right side : images */}
+<div className="pt-16 w-full md:w-1/10" style={{ width:'200px'}}>
+        <div className="bg-transparent rounded-lg p-4 flex flex-col items-center gap-4">
+          {["/chainlink.png", "/sepolia.png", "/avax.png", "/wagmi.png", "/rainbow.png"].map((src, index) => (
+            <img key={index} src={src} alt={`Logo ${index + 1}`} width={80} height={80} className="rounded" />
+          ))}
+          </div> 
         </div> 
         </div>
       
