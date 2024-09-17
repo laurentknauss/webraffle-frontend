@@ -41,6 +41,6 @@
     "@types/react-dom": "latest"
   },
   "engines": {
-    "node": "18.17.1"
+    "node": "18.18.1"
   }
 }
