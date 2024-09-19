@@ -30,7 +30,7 @@ const avalanche = {
       blockCreated: 11_907_934,
     },
   },
-} as const satifies Chain; 
+} as const satisfies Chain; 
       
       
       
