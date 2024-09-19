@@ -39,8 +39,8 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest"
-  },
-  "engines": {
-    "node": "18.18.1"
   }
+  
+    
+  
 }
