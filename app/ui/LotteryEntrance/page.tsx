@@ -3,7 +3,7 @@
 
 import { FC, useState, useEffect  } from 'react'; 
 
-import { useWriteContract, UseWriteContractParameters, UseWriteContractReturnType, useReadContract, useBalance, useSimulateContract, useSwitchChain, useAccount, useWaitForTransactionReceipt } from 'wagmi'; 
+import { useWriteContract,  useReadContract, useBalance, useSimulateContract, useSwitchChain, useAccount, useWaitForTransactionReceipt } from 'wagmi'; 
 import { toast , ToastContainer  } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"; 
 import { abi } from '@/app/abi';  
@@ -96,10 +96,6 @@ const LotteryEntrance:  FC = () => {
 const [entranceFee, setEntranceFee] = useState("0");
 const [numberOfPlayers, setNumberOfPlayers] = useState("0");
 const [recentWinner, setRecentWinner] = useState("0");
-
-//  const [error, setError] = useState<string | null>(null) 
-
-
 
 // View Functions
 const { data: balanceData  } = useBalance({
@@ -197,16 +193,17 @@ return (
 
 
                 <div className='font-bold text-center mt-4'> 
-                    current pot to win is  ${balanceData? ethers.formatUnits(balanceData.value, balanceData.decimals) : "0"} {balanceData?.symbol} </div>
+                    <strong>current pot to win is 
+                      ${balanceData? ethers.formatUnits(balanceData.value, balanceData.decimals) : "0"} {balanceData?.symbol} </strong></div>
                 </div> 
 
 
                 <div className='font-bold text-center mt-4'> 
-                     current number of players is {numberOfPlayers}   </div>
+                     <strong>current number of players is {numberOfPlayers}</strong>   </div>
                 <br /> 
 
                 <div className='font-bold text-center mt-4'> 
-                    most recent winner was wallet {recentWinner} </div> 
+                    <strong>most recent winner was wallet {recentWinner}</strong> </div> 
                 <br /> 
 
                 <div className='font-bold text-center justify-center mt-4'> 
@@ -217,7 +214,7 @@ return (
                 
                 </> 
                 ) : (
-                <div>prout </div>    
+                <div>... </div>    
                 
                 )} 
                 <ToastContainer /> 

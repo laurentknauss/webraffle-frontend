@@ -75,16 +75,20 @@ useEffect(() => {
             Frontend by <strong>TypeScript, NextjsV14 &  Rainbow SDK</strong> 
             <br />
             <br/>
-            Available on Sepolia & Fuji testnets for only 0.01 eth/avax
-            <br />
-            <h1 className='text-justify text-center'>A randomly picked winner selected <br /> 
-             every <span className='blink'><strong>10 minutes</strong> </span> 
-            by tamper-proof decentralized oracles</h1> 
+            Available on Sepolia & Fuji testnets for <strong>only 0.01 eth/avax</strong>
+            <br /> 
+            <br /> 
+            A randomly picked winner selected 
+             every <span className='blink'><strong>10 minutes</strong> </span><br /> 
+            {''} by tamper-proof decentralized oracles
+            <br/> 
+            <br/> 
             <br /> 
             
             <p className="text-sm"> Crafted by {' '} 
             <a href="https://knauss.dev" className="text-[#fafafa]">
-              Laurent Knauss </a>  {' '} {''} blockchain engineer
+              <strong>Laurent Knauss</strong> </a>  {' '} {''} blockchain engineer
+              <br/> 
                </p>           
           
           </p>
@@ -125,10 +129,11 @@ useEffect(() => {
            
 
           {/* Right side : images */}
-<div className="pt-16 w-full md:w-1/10" style={{ width:'200px'}}>
-        <div className="bg-transparent rounded-lg p-4 flex flex-col items-center gap-4">
+<div className="pt-18 w-full md:w-1/10" style={{ width:'200px'}}>
+        <div className="bg-transparent rounded-lg p-4 flex flex-col items-center gap-5">
           {["/chainlink.png", "/sepolia.png", "/avax.png", "/wagmi.png", "/rainbow.png"].map((src, index) => (
-            <img key={index} src={src} alt={`Logo ${index + 1}`} width={80} height={80} className="rounded" />
+            <img key={index} src={src} alt={`Logo ${index + 1}`} 
+            width={130} height={130} className="rounded" />
           ))}
           </div> 
         </div> 
