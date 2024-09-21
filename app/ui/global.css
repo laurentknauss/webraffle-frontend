@@ -46,3 +46,69 @@ body, html {
 .blink {
   animation: blink 1s infinite;
 }
+
+
+/* Glitter button */ 
+.glitter-button {
+  text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 15px #fff,
+      0 0 20px #ff0080, /* Quelques touches de rose flashy */
+      0 0 30px #ff0080,
+      0 0 40px #ff0080,
+      0 0 55px #ff0080,
+      0 0 75px #ff0080;
+}
+
+.glitter-button:hover {
+  animation: glitter 4s linear infinite;
+}
+
+
+
+
+
+
+@keyframes glitter {
+  0% {
+      text-shadow:
+          0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 15px #fff,
+          0 0 20px #ff0080, 
+          0 0 30px #ff0080,
+          0 0 40px #ff0080,
+          0 0 50px #ff0080,
+          0 0 75px #ff0080;
+  }
+  50% {
+      text-shadow:
+          0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 15px #fff,
+          0 0 20px #ffd700, 
+          0 0 30px #ffd700,
+          0 0 40px #ffd700,
+          0 0 50px #ffd700,
+          0 0 75px #ffd700;
+  }
+  100% {
+      text-shadow:
+          0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 15px #fff,
+          0 0 20px #ff0080,
+          0 0 30px #ff0080,
+          0 0 40px #ff0080,
+          0 0 50px #ff0080,
+          0 0 75px #ff0080;
+  }
+}
+
+
+
+
+
+
+

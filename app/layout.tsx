@@ -5,8 +5,6 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import '@/app/ui/global.css'
 import { RainbowKitProvider, Chain, darkTheme, midnightTheme } from "@rainbow-me/rainbowkit"; 
 import { WagmiProvider} from 'wagmi';
-import {ToastContainer } from 'react-toastify'; 
-import 'react-toastify/dist/ReactToastify.css';
 import { config } from '@/app/config';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Inter } from 'next/font/google' ; 
@@ -63,18 +61,10 @@ const avalanche = {
                     borderRadius: 'large',
                     fontStack: 'system' ,
                     })}
-                    initialChain={11155111}>  
+                       initialChain={11155111}>  
       
-                    {/* Toast container for notifications */} 
-                    <ToastContainer 
-                    position="top-center"           
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={true}
-                    closeOnClick
-                    theme='colored'                 
-      
-                    />
+                    
+                    
                     
                                     
               

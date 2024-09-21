@@ -40,14 +40,7 @@ useEffect(() => {
 
 
     <main className="flex min-h-screen flex-col p-6   w-full">
-
-     {/* Flex container for text and connect button (left side*
-      <div className="flex flex-col  justify-between gap-6 md:w-1/2"> </div> */}
-
-
-        {/*<div className="flex flex-col justify-center gap-6 rounded-lg bg-[#0a0a0a]
-              mt-10 mb-12 mr-8 ml-8 pl-4 pr-16 px-22 py-20 md:w-full md:px-24">  </div> */}
-          
+         
 
           <div className="flex flex-col md:flex-row gap-10 items-start justify-between max-w-7xl mx-auto w-full">
 
