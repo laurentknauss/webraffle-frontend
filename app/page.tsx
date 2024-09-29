@@ -4,7 +4,7 @@
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css'; 
-import { gql, useQuery } from '@apollo/client'; 
+//import { gql, useQuery } from '@apollo/client'; 
 //import { createClient, useQuery} from '@graphprotocol/client'
 import React from 'react';
 import {MdArrowForward} from 'react-icons/md'; 
@@ -14,7 +14,7 @@ import  LotteryEntrance  from '@/app/ui/LotteryEntrance/page';
 import Footer from '@/app/ui/Footer/page';
 
 
-
+/*
 const GET_LAST_LOTTERY_PLAYER = gql`
 { 
   raffleEnters(first:1, orderBy: blockTimestamp, orderDirection: desc)
@@ -116,17 +116,9 @@ function LastLotteryBalance() {
 
     if (error)  {
         console.error("Apollo Error: ", error); 
-        return <p> Error fetching the last balance: {error.message} </p>; 
-    } 
-
-    console.log('Balance data:', data); 
-
-     
-    if(!data || !data.balanceContracts || data.balanceContracts.length === 0) { 
-      return <p> No balance data available </p>; 
-    } 
-
-  const lastBalance = data?.balanceContracts[0]?.balance;
+        <div className='font-bold text-center text-2xl text-[#fc74a6] mt-4'>
+            Last player was wallet  {lastPlayer}
+        </div>
 
   return (
     <div className="text-center">
@@ -199,7 +191,7 @@ function LastLotteryWinner() {
     </div>
   );
 }
-
+*/
 
 
 export default function Page() {

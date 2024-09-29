@@ -3,7 +3,7 @@
 
 import { GoogleAnalytics } from '@next/third-parties/google'; 
 import '@/app/ui/global.css'
-import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client'; 
+//import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client'; 
 
 import { RainbowKitProvider, Chain, midnightTheme } from "@rainbow-me/rainbowkit"; 
 import { WagmiProvider} from 'wagmi';
@@ -39,12 +39,12 @@ const client = createClient({
   uri: 'https://api.studio.thegraph.com/query/89842/raffle/version/latest',
   
 });
-*/
+
 const client = new ApolloClient({ 
   uri: 'https://api.studio.thegraph.com/query/89842/raffle/version/latest',
   cache: new InMemoryCache(), 
 }); 
-
+*/
       
       
       
@@ -65,7 +65,7 @@ const client = new ApolloClient({
           <html lang="en">
             <body className={`${inter.className} flex`}>
               <QueryClientProvider client={queryClient}> 
-                <ApolloProvider client={client}>   
+                
                             <WagmiProvider config={config}> 
                             <RainbowKitProvider 
                             modalSize="compact"
@@ -86,7 +86,7 @@ const client = new ApolloClient({
                
                                 </RainbowKitProvider>
                                 </WagmiProvider> 
-                                </ApolloProvider> 
+                                
                                 </QueryClientProvider>
                                       
                                     <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} /> 

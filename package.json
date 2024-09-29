@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@apollo/client": "^3.11.8",
+    
     "@heroicons/react": "^2.1.4",
     "@next/third-parties": "^14.2.11",
     "@rainbow-me/rainbowkit": "^2.1.6",
@@ -38,7 +38,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@graphprotocol/client-cli": "^3.0.7",
+    
     "@types/bcrypt": "^5.0.2",
     "@types/node": "latest",
     "@types/react": "latest",
