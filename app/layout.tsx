@@ -3,11 +3,15 @@
 
 import { GoogleAnalytics } from '@next/third-parties/google'; 
 import '@/app/ui/global.css'
-import { RainbowKitProvider, Chain, darkTheme, midnightTheme } from "@rainbow-me/rainbowkit"; 
+import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client'; 
+
+import { RainbowKitProvider, Chain, midnightTheme } from "@rainbow-me/rainbowkit"; 
 import { WagmiProvider} from 'wagmi';
 import { config } from '@/app/config';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Inter } from 'next/font/google' ; 
+import { create } from 'domain';
+import { createClient } from 'viem';
 
 
 const avalanche = {
@@ -29,12 +33,23 @@ const avalanche = {
     },
   },
 } as const satisfies Chain; 
-      
-      
+  
+/*
+const client = createClient({ 
+  uri: 'https://api.studio.thegraph.com/query/89842/raffle/version/latest',
+  
+});
+*/
+const client = new ApolloClient({ 
+  uri: 'https://api.studio.thegraph.com/query/89842/raffle/version/latest',
+  cache: new InMemoryCache(), 
+}); 
+
       
       
       
       const queryClient = new QueryClient(); 
+      
       const inter = Inter({
          subsets: ['latin'], 
           weight: ["500", "800"],
@@ -50,40 +65,33 @@ const avalanche = {
           <html lang="en">
             <body className={`${inter.className} flex`}>
               <QueryClientProvider client={queryClient}> 
-               <WagmiProvider config={config}> 
-                    <RainbowKitProvider 
-                    modalSize="compact"
-                    locale="en-US"
-                    theme={midnightTheme({
-                    accentColor: '#fc74a6',
-                    overlayBlur: 'large',
-                    accentColorForeground: 'black',
-                    borderRadius: 'large',
-                    fontStack: 'system' ,
-                    })}
-                       initialChain={11155111}>  
-      
-                    
-                    
-                    
-                                    
-              
-              
-              <div className="flex-grow"> {children} </div>
-              
-              
-
-                             
-        
-        
-      
-        </RainbowKitProvider>
-         </WagmiProvider> 
-        </QueryClientProvider>
-              
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} /> 
-                    </body>
-          
+                <ApolloProvider client={client}>   
+                            <WagmiProvider config={config}> 
+                            <RainbowKitProvider 
+                            modalSize="compact"
+                            locale="en-US"
+                            theme={midnightTheme({
+                            accentColor: '#fc74a6',
+                            overlayBlur: 'large',
+                            accentColorForeground: 'black',
+                            borderRadius: 'large',
+                            fontStack: 'system' ,
+                            })}
+                              initialChain={43113}>  
+                  
+                      
+                        
+                                        
+                      <div className="flex-grow"> {children} </div>
+               
+                                </RainbowKitProvider>
+                                </WagmiProvider> 
+                                </ApolloProvider> 
+                                </QueryClientProvider>
+                                      
+                                    <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} /> 
+                                            </body>
+                                  
     </html>
   );
 }

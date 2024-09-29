@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.11.8",
     "@heroicons/react": "^2.1.4",
     "@next/third-parties": "^14.2.11",
     "@rainbow-me/rainbowkit": "^2.1.6",
@@ -19,6 +20,7 @@
     "encoding": "^0.1.13",
     "ethers": "^6.13.2",
     "google": "link:@next/font/google",
+    "graphql": "^16.9.0",
     "next": "15.0.0-canary.152",
     "next-auth": "5.0.0-beta.19",
     "pino-pretty": "^11.2.2",
@@ -36,6 +38,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@graphprotocol/client-cli": "^3.0.7",
     "@types/bcrypt": "^5.0.2",
     "@types/node": "latest",
     "@types/react": "latest",
