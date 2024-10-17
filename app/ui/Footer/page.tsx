@@ -15,8 +15,8 @@ const inter = Inter({
  
  const Footer = () => {
    return (
-     <footer className={`w-full ${inter.className} bg-transparent text-white m-10`}>
-       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+     <footer className={`w-full ${inter.className} bg-[#0a0a0a] rounded text-white m-10`}>
+       <div className="max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-6">
          <div className="flex flex-col justify-center items-center py-6">
            <p className="text-sm">
              Crafted by{' '}

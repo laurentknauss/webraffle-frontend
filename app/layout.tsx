@@ -34,17 +34,6 @@ const avalanche = {
   },
 } as const satisfies Chain; 
   
-/*
-const client = createClient({ 
-  uri: 'https://api.studio.thegraph.com/query/89842/raffle/version/latest',
-  
-});
-
-const client = new ApolloClient({ 
-  uri: 'https://api.studio.thegraph.com/query/89842/raffle/version/latest',
-  cache: new InMemoryCache(), 
-}); 
-*/
       
       
       
@@ -71,7 +60,7 @@ const client = new ApolloClient({
                             modalSize="compact"
                             locale="en-US"
                             theme={midnightTheme({
-                            accentColor: '#fc74a6',
+                            accentColor: '#ffffaf',
                             overlayBlur: 'large',
                             accentColorForeground: 'black',
                             borderRadius: 'large',

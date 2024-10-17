@@ -3,7 +3,7 @@
 'use client'
 
 import { http, createConfig}  from 'wagmi' 
-import { uniswapWallet, ledgerWallet, coreWallet, metaMaskWallet, rainbowWallet, walletConnectWallet, safeWallet  } from '@rainbow-me/rainbowkit/wallets';
+import { uniswapWallet, ledgerWallet, coreWallet, metaMaskWallet, rainbowWallet, walletConnectWallet, safeWallet, trustWallet  } from '@rainbow-me/rainbowkit/wallets';
 import { connectorsForWallets } from '@rainbow-me/rainbowkit';
 
 import { sepolia, avalancheFuji, polygonAmoy } from 'wagmi/chains'; 
@@ -15,7 +15,7 @@ const connectors = connectorsForWallets(
   [
     {
       groupName: 'Recommended', 
-      wallets: [coreWallet, metaMaskWallet, uniswapWallet, rainbowWallet, ledgerWallet, walletConnectWallet,  safeWallet], 
+      wallets: [coreWallet, metaMaskWallet, uniswapWallet, rainbowWallet, ledgerWallet, walletConnectWallet,  safeWallet, trustWallet], 
     },  
   ], 
 { appName: 'Decentralized Lottery', 
