@@ -32,8 +32,8 @@ export default function Page() {
       <div className="flex flex-col md:flex-row gap-10 items-start justify-between max-w-screen-2xl mx-auto w-full">
         {/* Left side : text content */}
         <div className="w-full p-16 md:w-full" style={{ width: '1000px' }}> 
-          <div className="rounded-lg bg-opacity-30 backdrop-filter backdrop-blur-md bg-[#0a0a0a] p-12 md:p-20 w-full border-2 border-[#ffffaf] ">
-            <p className="text-lg text-center text-[#ffffaf] md:text-2xl md:leading-normal">
+          <div className="rounded-lg bg-opacity-30 backdrop-filter backdrop-blur-md  p-12 md:p-20 w-full border-2 border-[#ffffaf] ">
+            <p className="text-lg text-center text-[#0a0a0a] md:text-2xl md:leading-normal">
               <span role="img" aria-label="flamingo" style={{ fontSize: '36px', verticalAlign: 'middle' }}>
                 🦩
               </span>{' '}
@@ -44,7 +44,7 @@ export default function Page() {
               <br />
               <br /> 
               Backend by <strong>Chainlink VRF & Automation</strong>  {''} {''} <br /> 
-              Frontend by <strong>TypeScript, NextjsV14, Wagmi &  RainbowKit SDK</strong> 
+              Frontend by <strong>TypeScript, NextjsV14, Wagmi &  RainbowKit </strong> 
               <br /> 
               <strong>ERC4337 compliant coming soon... </strong>
               <br />
@@ -57,7 +57,7 @@ export default function Page() {
               {''} by tamper-proof decentralized oracles
               <br/> 
             </p>
-            <div className='mt-8 flex flex-col bg-transparent items-center gap-4'> 
+            <div className='mt-8 flex flex-col bg-none items-center gap-4'> 
               <ConnectButton showBalance={false}/> 
               
               {isConnected && isCorrectChain && <LotteryEntrance />}            
